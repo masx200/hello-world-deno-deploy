@@ -1,12 +1,12 @@
 import { serve } from "https://deno.land/std@0.133.0/http/server.ts";
 
 function handler(req: Request): Response {
-    const { url, headers } = req;
+    const { url, headers,method } = req;
 
     return new Response(
         JSON.stringify([
-            "Hello world",
-            { url, headers: Object.fromEntries(headers) },
+            
+            { url, method,headers: Object.fromEntries(headers) },
         ]),
         { headers: { "content-type": "application/json" } },
     );
