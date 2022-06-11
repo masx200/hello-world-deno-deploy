@@ -1,6 +1,6 @@
 import { ConnInfo, serve } from "https://deno.land/std@0.143.0/http/server.ts";
 import { parse } from "https://deno.land/std@0.143.0/flags/mod.ts";
-function handler(req: Request, connInfo: ConnInfo): Response {
+export function handler(req: Request, connInfo: ConnInfo): Response {
     const { url, headers, method } = req;
 
     const data = {
