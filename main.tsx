@@ -1,5 +1,5 @@
 import { ConnInfo, serve } from "https://deno.land/std@0.143.0/http/server.ts";
-
+import { parse } from "https://deno.land/std@0.143.0/flags/mod.ts";
 function handler(req: Request, connInfo: ConnInfo): Response {
     const { url, headers, method } = req;
 
@@ -16,9 +16,17 @@ function handler(req: Request, connInfo: ConnInfo): Response {
         headers: { "content-type": "application/json" },
     });
 }
-
-console.log("Listening on http://localhost:8000");
-await Promise.all([
-    serve(handler, { port: 8000 }),
-    serve(handler, { hostname: "::", port: 8000 }),
-]);
+if (import.meta.main) {
+    let { port, hostname } = parse(Deno.args);
+    if (port || hostname) {
+        port ??= 8000;
+        hostname ??= "0.0.0.0";
+        await serve(handler, { port, hostname });
+    } else {
+        console.log("Listening on http://localhost:8000");
+        await Promise.all([
+            serve(handler, { port: 8000 }),
+            serve(handler, { hostname: "::", port: 8000 }),
+        ]);
+    }
+}
