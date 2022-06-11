@@ -9,8 +9,10 @@ function handler(req: Request, connInfo: ConnInfo): Response {
         method,
         headers: Object.fromEntries(headers),
     };
-    console.log(data);
-    return new Response(JSON.stringify(data, null, 4), {
+
+    const body = JSON.stringify(data, null, 4);
+    console.log(body);
+    return new Response(body, {
         headers: { "content-type": "application/json" },
     });
 }
