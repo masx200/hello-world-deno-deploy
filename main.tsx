@@ -4,13 +4,13 @@ export function handler(req: Request, connInfo: ConnInfo): Response {
     const { url, headers, method } = req;
 
     const data = {
-        connInfo,
+      ...  connInfo,
         url,
         method,
         headers: Object.fromEntries(headers),
     };
 
-    const body = JSON.stringify(data, null, 4);
+    const body = JSON.stringify(data, );
     console.log(body);
     return new Response(body, {
         headers: { "content-type": "application/json" },
