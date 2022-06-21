@@ -11,7 +11,7 @@ export function handler(req: Request, connInfo: ConnInfo): Response {
     };
 
     const body = JSON.stringify(data, );
-    console.log(body);
+    console.log('request',body);
     return new Response(body, {
         headers: { "content-type": "application/json" },
     });
