@@ -11,11 +11,12 @@ export function handler(req: Request, connInfo: ConnInfo): Response {
     };
 
     const body = JSON.stringify(data);
-//     console.log("request", body);
+    //     console.log("request", body);
     return new Response(body, {
         headers: {
-            "Strict-Transport-Security" :"max-age=31536000",
-            "content-type": "application/json" },
+            "Strict-Transport-Security": "max-age=31536000",
+            "content-type": "application/json",
+        },
     });
 }
 if (import.meta.main) {
@@ -25,7 +26,7 @@ if (import.meta.main) {
         hostname ??= "0.0.0.0";
         await serve(handler, { port, hostname });
     } else {
-//         console.log("Listening on http://localhost:8000");
+        //         console.log("Listening on http://localhost:8000");
 
         await serve(handler, { hostname: "0.0.0.0", port: 8000 });
     }
