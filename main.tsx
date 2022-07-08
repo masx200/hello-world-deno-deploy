@@ -11,7 +11,7 @@ export function handler(req: Request, connInfo: ConnInfo): Response {
     };
 
     const body = JSON.stringify(data);
-    console.log("request", body);
+//     console.log("request", body);
     return new Response(body, {
         headers: {
             "Strict-Transport-Security" :"max-age=31536000",
