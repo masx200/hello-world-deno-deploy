@@ -13,7 +13,9 @@ export function handler(req: Request, connInfo: ConnInfo): Response {
     const body = JSON.stringify(data);
     console.log("request", body);
     return new Response(body, {
-        headers: { "content-type": "application/json" },
+        headers: {
+            "Strict-Transport-Security" :"max-age=31536000",
+            "content-type": "application/json" },
     });
 }
 if (import.meta.main) {
