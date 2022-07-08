@@ -25,7 +25,7 @@ if (import.meta.main) {
         hostname ??= "0.0.0.0";
         await serve(handler, { port, hostname });
     } else {
-        console.log("Listening on http://localhost:8000");
+//         console.log("Listening on http://localhost:8000");
 
         await serve(handler, { hostname: "0.0.0.0", port: 8000 });
     }
