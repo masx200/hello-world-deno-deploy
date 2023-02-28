@@ -1,5 +1,5 @@
-import { ConnInfo, serve } from "https://deno.land/std@0.157.0/http/server.ts";
-import { parse } from "https://deno.land/std@0.157.0/flags/mod.ts";
+import { ConnInfo, serve } from "https://deno.land/std@0.178.0/http/server.ts";
+import { parse } from "https://deno.land/std@0.178.0/flags/mod.ts";
 export function handler(req: Request, connInfo: ConnInfo): Response {
     const { url, headers, method } = req;
 
