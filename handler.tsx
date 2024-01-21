@@ -11,11 +11,13 @@ export function handler(req: Request, connInfo: ConnInfo): Response {
   };
 
   const body = JSON.stringify(data);
-  //     console.log("request", body);
-  return new Response(body, {
+  console.log("request", data);
+  const response = new Response(body, {
     headers: {
       "Strict-Transport-Security": "max-age=31536000",
       "content-type": "application/json",
     },
   });
+  console.log(response);
+  return response;
 }
