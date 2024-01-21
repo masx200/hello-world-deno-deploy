@@ -18,6 +18,6 @@ export function handler(req: Request, connInfo: ConnInfo): Response {
       "content-type": "application/json",
     },
   });
-  console.log(response);
+  console.log(response, { url, method });
   return response;
 }
