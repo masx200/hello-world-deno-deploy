@@ -1,5 +1,4 @@
-
-import { ConnInfo, serve } from "https://deno.land/std@0.212.0/http/server.ts";
+import { serve } from "https://deno.land/std@0.212.0/http/server.ts";
 import { parse } from "https://deno.land/std@0.212.0/flags/mod.ts";
 import { handler } from "./handler.tsx";
 
