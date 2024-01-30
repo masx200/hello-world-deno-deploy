@@ -25,13 +25,19 @@ export function handler(req: Request, connInfo: ConnInfo): Response {
     });
     // console.log(response, { url, method });
 
-    console.log({
-        connInfo,
-        request: { url, method, headers: Object.fromEntries(headers) },
-        response: {
-            status: response.status,
-            headers: Object.fromEntries(response.headers),
-        },
-    });
+    console.log(
+        JSON.stringify(
+            {
+                connInfo,
+                request: { url, method, headers: Object.fromEntries(headers) },
+                response: {
+                    status: response.status,
+                    headers: Object.fromEntries(response.headers),
+                },
+            },
+            null,
+            4
+        )
+    );
     return response;
 }
