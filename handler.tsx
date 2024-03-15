@@ -1,4 +1,4 @@
-import { ConnInfo } from "https://deno.land/std@0.182.0/http/server.ts";
+import { ConnInfo } from "https://deno.land/std@0.220.1/http/server.ts";
 
 export function handler(req: Request, connInfo: ConnInfo): Response {
     const { url, headers, method } = req;
