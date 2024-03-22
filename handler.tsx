@@ -14,7 +14,7 @@ export function handler(req: Request, connInfo: ConnInfo): Response {
             method,
             headers: Object.fromEntries(headers),
         },
-        response: { status: status, headers: response_headers },
+      //  response: { status: status, headers: response_headers },
     };
 
     const body = JSON.stringify(data);
@@ -30,10 +30,10 @@ export function handler(req: Request, connInfo: ConnInfo): Response {
             {
                 connInfo,
                 request: { url, method, headers: Object.fromEntries(headers) },
-                response: {
-                    status: response.status,
-                    headers: Object.fromEntries(response.headers),
-                },
+                // response: {
+                //     status: response.status,
+                //     headers: Object.fromEntries(response.headers),
+                // },
             },
             null,
             4
