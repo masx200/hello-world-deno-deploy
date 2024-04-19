@@ -1,5 +1,5 @@
-import { serve } from "https://deno.land/std@0.182.0/http/server.ts";
-import { parse } from "https://deno.land/std@0.182.0/flags/mod.ts";
+import { serve } from "https://deno.land/std@0.220.1/http/server.ts";
+import { parse } from "https://deno.land/std@0.220.1/flags/mod.ts";
 import { handler } from "./handler.tsx";
 if (import.meta.main) {
     let { port, hostname } = parse(Deno.args);
